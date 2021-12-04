@@ -1,11 +1,11 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/login.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/AccountSummary.feature");
 formatter.feature({
-  "name": "Only authorized users should be able to login",
+  "name": "Account summary content",
   "description": "",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "login with valid credentials",
+  "name": "verify title",
   "description": "",
   "keyword": "Scenario",
   "tags": [
@@ -15,39 +15,27 @@ formatter.scenario({
   ]
 });
 formatter.before({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
-  "name": "the user is on the login page",
+  "name": "the user logged in",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "com.zero.step_definitions.LoginStepDef.the_user_is_on_the_login_page()"
+  "location": "com.zero.step_definitions.LoginStepDef.user_logged_in()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
-  "name": "the user logs in using valid credentials",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.zero.step_definitions.LoginStepDef.the_user_logs_in_using_valid_credentials()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the \"Account Summary\" page should be displayed",
+  "name": "the title should be \"Zero - Account Summary\"",
   "keyword": "Then "
 });
-formatter.match({
-  "location": "com.zero.step_definitions.LoginStepDef.the_page_should_be_displayed(java.lang.String)"
-});
+formatter.match({});
 formatter.result({
-  "status": "passed"
+  "status": "undefined"
 });
 formatter.after({
-  "status": "passed"
+  "status": "skipped"
 });
 });

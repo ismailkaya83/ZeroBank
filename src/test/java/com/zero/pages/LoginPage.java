@@ -1,36 +1,49 @@
 package com.zero.pages;
 
+import com.zero.utilities.BrowserUtils;
+import com.zero.utilities.ConfigurationReader;
 import com.zero.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    public LoginPage(){
+    public LoginPage() {
         PageFactory.initElements(Driver.get(), this);
     }
 
-    @FindBy(id="user_login")
-    public WebElement userName;
+    @FindBy(id = "user_login")
+    public WebElement userNameTextBox;
 
-    @FindBy(id="user_password")
-    public WebElement password;
+    @FindBy(id = "user_password")
+    public WebElement passwordTextBox;
 
-    @FindBy(name = "submit")
-    public WebElement submit;
+    @FindBy(xpath = "//input[@value='Sign in']")
+    public WebElement signInButton;
 
-    @FindBy(id="details-button")
+    @FindBy(id = "details-button")
     public WebElement advanced;
 
     @FindBy(id = "proceed-link")
     public WebElement link;
 
-    public void login(String userNameStr, String passwordStr){
-        userName.sendKeys(userNameStr);
-        password.sendKeys(passwordStr);
-        submit.click();
+    public void login() {
+
+        String username = ConfigurationReader.get("username");
+        String password = ConfigurationReader.get("password");
+
+        userNameTextBox.sendKeys(username);
+        passwordTextBox.sendKeys(password);
+        signInButton.click();
         advanced.click();
         link.click();
+        BrowserUtils.waitFor(2);
+    }
+
+    public String getMessageContent(){
+        WebElement message = Driver.get().findElement(By.cssSelector(".alert.alert-error"));
+        return message.getText();
     }
 }

@@ -3,12 +3,11 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-11-09T23:00:35.184Z",
+        "start_timestamp": "2021-11-23T11:24:23.290Z",
         "before": [
           {
             "result": {
-              "duration": 2705000000,
-              "status": "passed"
+              "status": "skipped"
             },
             "match": {
               "location": "com.zero.step_definitions.Hooks.setUp()"
@@ -16,14 +15,13 @@
           }
         ],
         "line": 3,
-        "name": "login with valid credentials",
+        "name": "verify title",
         "description": "",
-        "id": "only-authorized-users-should-be-able-to-login;login-with-valid-credentials",
+        "id": "account-summary-content;verify-title",
         "after": [
           {
             "result": {
-              "duration": 1281000000,
-              "status": "passed"
+              "status": "skipped"
             },
             "match": {
               "location": "com.zero.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
@@ -35,44 +33,22 @@
         "steps": [
           {
             "result": {
-              "duration": 3088000000,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 4,
-            "name": "the user is on the login page",
+            "name": "the user logged in",
             "match": {
-              "location": "com.zero.step_definitions.LoginStepDef.the_user_is_on_the_login_page()"
+              "location": "com.zero.step_definitions.LoginStepDef.user_logged_in()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 3002000000,
-              "status": "passed"
+              "status": "undefined"
             },
             "line": 5,
-            "name": "the user logs in using valid credentials",
-            "match": {
-              "location": "com.zero.step_definitions.LoginStepDef.the_user_logs_in_using_valid_credentials()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 2021000000,
-              "status": "passed"
-            },
-            "line": 6,
-            "name": "the \"Account Summary\" page should be displayed",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"Account Summary\"",
-                  "offset": 4
-                }
-              ],
-              "location": "com.zero.step_definitions.LoginStepDef.the_page_should_be_displayed(java.lang.String)"
-            },
+            "name": "the title should be \"Zero - Account Summary\"",
+            "match": {},
             "keyword": "Then "
           }
         ],
@@ -83,11 +59,11 @@
         ]
       }
     ],
-    "name": "Only authorized users should be able to login",
+    "name": "Account summary content",
     "description": "",
-    "id": "only-authorized-users-should-be-able-to-login",
+    "id": "account-summary-content",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/login.feature",
+    "uri": "file:src/test/resources/features/AccountSummary.feature",
     "tags": []
   }
 ]

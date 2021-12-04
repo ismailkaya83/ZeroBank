@@ -1,5 +1,6 @@
 package com.zero.step_definitions;
 
+import com.zero.utilities.ConfigurationReader;
 import com.zero.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -14,6 +15,9 @@ public class Hooks {
     @Before
     public void setUp(){
         System.out.println("\tthis is coming from BEFORE");
+        String url = ConfigurationReader.get("url");
+        Driver.get().get(url);
+        Driver.get().manage().window().maximize();
         Driver.get().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
